@@ -1,9 +1,14 @@
 import java.util.*;
 
-public class Main {
+public class BubbleSort {
     public static void main(String[] args) {
         Random rand = new Random();
         int[] array = rand.ints(5, 1, 10).toArray();
+        System.out.println("Unsorted:");
+        for (int x : arr){
+            System.out.print(x+" ");
+        }
+        System.out.println();
         boolean sorted = false;
         while (!sorted){
             sorted = true;
@@ -13,10 +18,12 @@ public class Main {
                     array[x] = array[x+1];
                     array[x+1] = bucket;
                     sorted = false;
+                    counter++;
                 }
             }
         }
-        for (int x : array){
+        System.out.println("Sorted in "+counter+" iterations:");
+        for (int x : arr){
             System.out.print(x+" ");
         }
     }
